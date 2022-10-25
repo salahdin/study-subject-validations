@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'study_subject_validations.apps.AppConfig',
+    'django_crypto_fields.apps.AppConfig',
+    'django_revision.apps.AppConfig',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'edc_device.apps.AppConfig',
+    'edc_protocol.apps.AppConfig',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +57,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'study_subject_validations.urls'
+
+KEY_PATH = os.path.join(BASE_DIR, 'crypto_fields')
+
+ETC_DIR = os.path.join(BASE_DIR, 'etc')
+
+#AUTO_CREATE_KEYS=`True`
 
 TEMPLATES = [
     {
@@ -71,7 +82,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'study_subject_validations.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -81,7 +91,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -101,7 +110,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -114,7 +122,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
