@@ -1,2 +1,3 @@
-from .test_community_engagement_form_ import TestCommunityForm
-from .test_subject_screening_form import TestSubjectScreeningForm
+from .test_community_engagement_form_ import TestCommunityFormValidator
+from .test_subject_screening_form import TestSubjectScreeningFormValidator
+from .test_education_form import TestEducationFormValidator

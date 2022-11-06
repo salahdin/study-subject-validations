@@ -4,7 +4,7 @@ from edc_constants.constants import YES
 from ..form_validators import SubjectScreeningFormValidator
 
 
-class TestSubjectScreeningForm(TestCase):
+class TestSubjectScreeningFormValidator(TestCase):
 
     def test_marriage_certificate_required(self):
         cleaned_data = {
